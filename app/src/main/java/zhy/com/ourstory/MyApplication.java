@@ -1,10 +1,11 @@
 package zhy.com.ourstory;
 
 import android.app.Application;
-import android.content.Context;
+import android.util.Log;
 
-import zhy.com.engine.network.HttpClient;
-import zhy.com.ourstory.config.Constant;
+import com.alibaba.android.arouter.launcher.ARouter;
+
+import zhy.com.engine.util.EnvUtil;
 
 /**
  * 全局应用
@@ -17,7 +18,11 @@ public class MyApplication extends Application{
     public void onCreate() {
         super.onCreate();
 
-        initNet();
+        EnvUtil.syncIsDebug(this);//初始化当前运行环境
+
+
+        initNet();//初始化网络请求
+        initRouter();//初始化路由
     }
 
     /**
@@ -25,5 +30,14 @@ public class MyApplication extends Application{
      */
     private void initNet(){
 //        HttpClient.config(Constant.BASE_URL, this.getApplicationContext());
+    }
+
+    private void initRouter(){
+
+        if (EnvUtil.isDebug()){
+            ARouter.openDebug();
+            ARouter.openLog();
+        }
+        ARouter.init(this);
     }
 }

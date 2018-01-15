@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 
 /**
+ * 判断当前运行环境的工具类
  * Created by HZD on 2017/9/25.
  */
 

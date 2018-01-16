@@ -24,13 +24,16 @@ import zhy.com.engine.customView.NoScrollViewPage;
 import zhy.com.engine.util.LifeCycleUtil;
 import zhy.com.ourstory.R;
 import zhy.com.ourstory.adapter.MainViewPagerAdapter;
+import zhy.com.speech.fragment.SpeechFragment;
 import zhy.com.story.fragment.StoryFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private NoScrollViewPage mViewPagerVP;
     private MainViewPagerAdapter mAdapter;
+
     private StoryFragment mStoryFragment;
+    private SpeechFragment mSpeechFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView(){
-        initTabBar();
         configViewPager();
+        initTabBar();//注意先后顺序
     }
 
     /**
@@ -55,14 +58,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         List<Fragment> fList = new ArrayList<>();
         mStoryFragment = new StoryFragment();
+        mSpeechFragment = new SpeechFragment();
         fList.add(mStoryFragment);
+        fList.add(mSpeechFragment);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         mAdapter = new MainViewPagerAdapter(fragmentManager, fList);
         mViewPagerVP.setAdapter(mAdapter);
         mViewPagerVP.setCurrentItem(0);
-        mViewPagerVP.setOffscreenPageLimit(fList.size());
+        mViewPagerVP.setOffscreenPageLimit(1);
     }
 
     /**
@@ -72,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         PageNavigationView tabBar = findViewById(R.id.tab_bar);
         NavigationController navigationController = tabBar.custom()
                 .addItem(initTabBarItem(R.drawable.story_normal, R.drawable.story_selected, "故事"))
+                .addItem(initTabBarItem(R.drawable.story_normal, R.drawable.story_selected, "言论"))
                 .build();
         navigationController.setupWithViewPager(mViewPagerVP);
         navigationController.addTabItemSelectedListener(new OnTabItemSelectedListener() {
@@ -79,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onSelected(int index, int old) {
                 if (index == 0){
                     Toast.makeText(MainActivity.this, "点击了故事", Toast.LENGTH_SHORT).show();
+//                    mViewPagerVP.setCurrentItem(0);
+                }else if (index == 1){
+                    Toast.makeText(MainActivity.this, "点击了言论", Toast.LENGTH_SHORT).show();
+//                    mViewPagerVP.setCurrentItem(1);
                 }
             }
 

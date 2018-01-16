@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OurStory.iml" filepath="$PROJECT_DIR$/OurStory.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/disabuse/disabuse.iml" filepath="$PROJECT_DIR$/disabuse/disabuse.iml" />
       <module fileurl="file://$PROJECT_DIR$/engine/engine.iml" filepath="$PROJECT_DIR$/engine/engine.iml" />
       <module fileurl="file://$PROJECT_DIR$/speech/speech.iml" filepath="$PROJECT_DIR$/speech/speech.iml" />
       <module fileurl="file://$PROJECT_DIR$/story/story.iml" filepath="$PROJECT_DIR$/story/story.iml" />

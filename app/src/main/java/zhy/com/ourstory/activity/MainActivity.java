@@ -79,10 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onSelected(int index, int old) {
                 if (index == 0){
                     Toast.makeText(MainActivity.this, "点击了故事", Toast.LENGTH_SHORT).show();
-//                    mViewPagerVP.setCurrentItem(0);
                 }else if (index == 1){
                     Toast.makeText(MainActivity.this, "点击了言论", Toast.LENGTH_SHORT).show();
-//                    mViewPagerVP.setCurrentItem(1);
                 }
             }
 

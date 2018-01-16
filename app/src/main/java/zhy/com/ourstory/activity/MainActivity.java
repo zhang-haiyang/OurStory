@@ -14,6 +14,7 @@ import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectedListener;
+import zhy.com.disabuse.fragment.DisabuseFragment;
 import zhy.com.engine.customView.MainTabItemView;
 import zhy.com.engine.customView.NoScrollViewPage;
 import zhy.com.ourstory.R;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private StoryFragment mStoryFragment;
     private SpeechFragment mSpeechFragment;
+    private DisabuseFragment mDisabuseFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         List<Fragment> fList = new ArrayList<>();
         mStoryFragment = new StoryFragment();
         mSpeechFragment = new SpeechFragment();
+        mDisabuseFragment = new DisabuseFragment();
         fList.add(mStoryFragment);
         fList.add(mSpeechFragment);
+        fList.add(mDisabuseFragment);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NavigationController navigationController = tabBar.custom()
                 .addItem(initTabBarItem(R.drawable.story_normal, R.drawable.story_selected, "故事"))
                 .addItem(initTabBarItem(R.drawable.speech_normal, R.drawable.speech_selected, "言论"))
+                .addItem(initTabBarItem(R.drawable.disabuse_normal, R.drawable.disabuse_selected, "解忧"))
                 .build();
         navigationController.setupWithViewPager(mViewPagerVP);
         navigationController.addTabItemSelectedListener(new OnTabItemSelectedListener() {
@@ -81,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(MainActivity.this, "点击了故事", Toast.LENGTH_SHORT).show();
                 }else if (index == 1){
                     Toast.makeText(MainActivity.this, "点击了言论", Toast.LENGTH_SHORT).show();
+                }else if (index == 2){
+                    Toast.makeText(MainActivity.this, "点击了解忧", Toast.LENGTH_SHORT).show();
                 }
             }
 

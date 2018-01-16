@@ -15,17 +15,15 @@ import zhy.com.engine.util.LifeCycleUtil;
 
 public class MyApplication extends Application{
 
-    private int color;
-
     @Override
     public void onCreate() {
         super.onCreate();
 
         EnvUtil.syncIsDebug(this);//初始化当前运行环境
 
-
         initNet();//初始化网络请求
         initRouter();//初始化路由
+
         registerLifeCycle();//注册生命周期回调
     }
 
@@ -40,7 +38,6 @@ public class MyApplication extends Application{
      * 配置路由
      */
     private void initRouter(){
-
         if (EnvUtil.isDebug()){
             ARouter.openDebug();
             ARouter.openLog();

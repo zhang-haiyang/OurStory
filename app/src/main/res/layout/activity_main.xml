@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试页面!"
-        />
+    <!--不可滑动的ViewPager-->
+    <zhy.com.engine.customView.NoScrollViewPage
+        android:id="@+id/vp_main"
+        android:background="#345"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </zhy.com.engine.customView.NoScrollViewPage>
 
-</LinearLayout>
+    <!--分割线-->
+    <View
+        android:background="@color/viewLine"
+        android:layout_above="@+id/tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <!--底部TabBar-->
+    <me.majiajie.pagerbottomtabstrip.PageNavigationView
+        android:id="@id/tab_bar"
+        android:background="#fff"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="49.5dp">
+    </me.majiajie.pagerbottomtabstrip.PageNavigationView>
+
+</RelativeLayout>

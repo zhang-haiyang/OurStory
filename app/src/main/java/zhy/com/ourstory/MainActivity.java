@@ -13,7 +13,6 @@ import zhy.com.engine.util.LifeCycleUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +25,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView(){
 
-        textView = findViewById(R.id.tv_tv);
-        textView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.tv_tv:
-                Bundle bundle = new Bundle();
-                bundle.putInt("sdsd", 22);
-                bundle.putString("sds", "张海洋");
-                ARouter.getInstance().build("/engine/Main").with(bundle).navigation();
-                break;
                 default:
                     break;
         }

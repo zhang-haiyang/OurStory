@@ -5,12 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.gyf.barlibrary.ImmersionBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +16,6 @@ import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectedListener;
 import zhy.com.engine.customView.MainTabItemView;
 import zhy.com.engine.customView.NoScrollViewPage;
-import zhy.com.engine.util.LifeCycleUtil;
 import zhy.com.ourstory.R;
 import zhy.com.ourstory.adapter.MainViewPagerAdapter;
 import zhy.com.speech.fragment.SpeechFragment;
@@ -77,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         PageNavigationView tabBar = findViewById(R.id.tab_bar);
         NavigationController navigationController = tabBar.custom()
                 .addItem(initTabBarItem(R.drawable.story_normal, R.drawable.story_selected, "故事"))
-                .addItem(initTabBarItem(R.drawable.story_normal, R.drawable.story_selected, "言论"))
+                .addItem(initTabBarItem(R.drawable.speech_normal, R.drawable.speech_selected, "言论"))
                 .build();
         navigationController.setupWithViewPager(mViewPagerVP);
         navigationController.addTabItemSelectedListener(new OnTabItemSelectedListener() {

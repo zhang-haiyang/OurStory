@@ -52,5 +52,8 @@ dependencies {
     // 状态栏工具
     compile 'com.gyf.barlibrary:barlibrary:2.3.0'
 
+    //主页面的TabBar切换
+    compile 'me.majiajie:pager-bottom-tab-strip:2.2.4'
+
 
 }

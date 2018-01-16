@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -131,9 +133,9 @@ public class HttpInterceptor implements Interceptor {
 
         // 如果为开发环境，则打印日志
         if (EnvUtil.isDebug()) {
-//            Logger.d(requestUrl);
-//            Logger.d(requestBodyString);
-//            Logger.d(responseBodyString);
+            Logger.d(requestUrl);
+            Logger.d(requestBodyString);
+            Logger.d(responseBodyString);
         }
 
         return response;

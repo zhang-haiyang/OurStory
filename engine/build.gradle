@@ -1,15 +1,16 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.library'//此处只能是以library结尾
 
 android {
     compileSdkVersion 26
     defaultConfig {
-//        applicationId "zhy.com.engine"
+//        applicationId "zhy.com.engine"   普通组件是没有这个id 的
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //所有组件必须添加名称
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
@@ -44,12 +45,9 @@ dependencies {
     // 阿里路由管理器(不开vpn似乎不给依赖)
     compile 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-//    compile 'com.alibaba:arouter-annotation:1.0.3'
-//    compile 'com.alibaba:arouter-compiler:1.1.2'
-//    compile 'com.alibaba:arouter-api:1.2.1'
-//    compile 'com.alibaba:arouter-annotation:1.0.3'
-//    annotationProcessor 'com.alibaba:arouter-compiler:1.1.2'
 
+    // 日志工具
+    compile 'com.orhanobut:logger:2.1.1'
 
 
 }

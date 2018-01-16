@@ -7,7 +7,6 @@
     <!--不可滑动的ViewPager-->
     <zhy.com.engine.customView.NoScrollViewPage
         android:id="@+id/vp_main"
-        android:background="#345"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </zhy.com.engine.customView.NoScrollViewPage>

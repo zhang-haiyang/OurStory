@@ -7,13 +7,16 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
+/**
+ * 这个Activity名字迟早要改
+ */
 @Route(path = "/engine/Main")
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mains);
+        setContentView(R.layout.activity_mainm);
 
 
         Intent intent = getIntent();

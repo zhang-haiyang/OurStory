@@ -7,20 +7,24 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.gyf.barlibrary.ImmersionBar;
+
+import zhy.com.engine.util.LifeCycleUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         initView();
     }
 
     private void initView(){
+
         textView = findViewById(R.id.tv_tv);
         textView.setOnClickListener(this);
     }
@@ -38,4 +42,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
         }
     }
+
 }

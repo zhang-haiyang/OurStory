@@ -6,6 +6,7 @@ import android.util.Log;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 import zhy.com.engine.util.EnvUtil;
+import zhy.com.engine.util.LifeCycleUtil;
 
 /**
  * 全局应用
@@ -13,6 +14,8 @@ import zhy.com.engine.util.EnvUtil;
  */
 
 public class MyApplication extends Application{
+
+    private int color;
 
     @Override
     public void onCreate() {
@@ -23,6 +26,7 @@ public class MyApplication extends Application{
 
         initNet();//初始化网络请求
         initRouter();//初始化路由
+        registerLifeCycle();//注册生命周期回调
     }
 
     /**
@@ -32,6 +36,9 @@ public class MyApplication extends Application{
 //        HttpClient.config(Constant.BASE_URL, this.getApplicationContext());
     }
 
+    /**
+     * 配置路由
+     */
     private void initRouter(){
 
         if (EnvUtil.isDebug()){
@@ -40,4 +47,13 @@ public class MyApplication extends Application{
         }
         ARouter.init(this);
     }
+
+    /**
+     * 注册生命周期回调
+     */
+    private void registerLifeCycle(){
+        new LifeCycleUtil().registerLife(this);
+    }
+
+
 }

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import zhy.com.disabuse.R;
 
 /**
- * 解惑碎片
+ * 首页解忧碎片
  * Created by hww on 2018/1/16.
  */
 

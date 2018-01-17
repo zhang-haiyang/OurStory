@@ -11,6 +11,13 @@
         <activity android:name=".activity.WqqMainActivity">
 
         </activity>
+
+        <!--视频播放页-->
+        <activity
+            android:name="zhy.com.video.activity.OpenVideoActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
     </application>
 
 </manifest>

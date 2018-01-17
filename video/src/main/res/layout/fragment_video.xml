@@ -4,8 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
-        android:text="视频碎片"
+        android:id="@+id/tv_open_video"
+        android:text="播放视频"
+        android:textColor="#345"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

@@ -23,6 +23,9 @@ import zhy.com.speech.fragment.SpeechFragment;
 import zhy.com.story.fragment.StoryFragment;
 import zhy.com.video.fragment.VideoFragment;
 
+/**
+ * 主页面
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private NoScrollViewPage mViewPagerVP;

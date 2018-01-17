@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SpeechFragment mSpeechFragment;
     private DisabuseFragment mDisabuseFragment;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView(){
         configViewPager();
-        initTabBar();//注意先后顺序
+        initTabBar();//注意与上方代码的先后顺序
     }
 
     /**
@@ -108,7 +109,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         itemView.setTextCheckedColor(getResources().getColor(R.color.colorTabBarTextSelect));
         return itemView;
     }
-
 
     @Override
     public void onClick(View view) {

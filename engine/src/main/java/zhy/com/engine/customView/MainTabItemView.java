@@ -14,7 +14,7 @@ import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 import zhy.com.engine.R;
 
 /**
- * 首页的Image
+ * 首页TabBar的Image
  * Created by hww on 17/4/13.
  */
 

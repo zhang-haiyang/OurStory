@@ -21,7 +21,7 @@ public class HttpClient {
      */
     private static String sBaseUrl = "";
 
-    private static Context sContext;
+//    private static Context sContext;
 
     /**
      * 请求连接超时时间
@@ -40,14 +40,14 @@ public class HttpClient {
      */
     public static void config(String url, Context context){
         sBaseUrl = url;
-        sContext = context;
+//        sContext = context;
 
         if (sRetrofit == null) {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             //超时管理
             builder.connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS).readTimeout(READ_TIME_OUT, TimeUnit.SECONDS).build();
             //添加拦截器，处理日志及请求后的处理
-            builder.addInterceptor(new HttpInterceptor(sContext));
+            builder.addInterceptor(new HttpInterceptor(context));
 
             OkHttpClient client = builder.build();
             sRetrofit = new Retrofit.Builder().baseUrl(sBaseUrl).addConverterFactory(GsonConverterFactory.create()).client(client).build();

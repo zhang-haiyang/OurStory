@@ -39,7 +39,6 @@ public class VideoFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(getActivity(), OpenVideoActivity.class);
                 startActivity(intent);
             }

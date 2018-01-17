@@ -41,7 +41,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     // 视频播放器
-    compile 'com.shuyu:GSYVideoPlayer:2.1.0'
+//    compile 'com.shuyu:GSYVideoPlayer:2.1.0' //全引用
+    compile 'com.shuyu:gsyVideoPlayer-java:3.0.0'
+    compile 'com.shuyu:gsyVideoPlayer-armv7a:3.0.0'
+    compile 'com.shuyu:gsyVideoPlayer-arm64:3.0.0'
+    compile 'com.shuyu:gsyVideoPlayer-x86:3.0.0'
 
     compile project(':engine')
 }

@@ -1,1 +1,1 @@
-include ':app', ':engine', ':story', ':speech', ':disabuse'
+include ':app', ':engine', ':story', ':speech', ':disabuse', ':video'

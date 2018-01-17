@@ -21,6 +21,7 @@ import zhy.com.ourstory.R;
 import zhy.com.ourstory.adapter.MainViewPagerAdapter;
 import zhy.com.speech.fragment.SpeechFragment;
 import zhy.com.story.fragment.StoryFragment;
+import zhy.com.video.fragment.VideoFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private StoryFragment mStoryFragment;
     private SpeechFragment mSpeechFragment;
     private DisabuseFragment mDisabuseFragment;
+    private VideoFragment mVideoFragment;
 
 
     @Override
@@ -57,9 +59,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStoryFragment = new StoryFragment();
         mSpeechFragment = new SpeechFragment();
         mDisabuseFragment = new DisabuseFragment();
+        mVideoFragment = new VideoFragment();
         fList.add(mStoryFragment);
         fList.add(mSpeechFragment);
         fList.add(mDisabuseFragment);
+        fList.add(mVideoFragment);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -78,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addItem(initTabBarItem(R.drawable.story_normal, R.drawable.story_selected, "故事"))
                 .addItem(initTabBarItem(R.drawable.speech_normal, R.drawable.speech_selected, "言论"))
                 .addItem(initTabBarItem(R.drawable.disabuse_normal, R.drawable.disabuse_selected, "解忧"))
+                .addItem(initTabBarItem(R.drawable.video_normal, R.drawable.video_selected, "视频"))
                 .build();
         navigationController.setupWithViewPager(mViewPagerVP);
         navigationController.addTabItemSelectedListener(new OnTabItemSelectedListener() {
@@ -89,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(MainActivity.this, "点击了言论", Toast.LENGTH_SHORT).show();
                 }else if (index == 2){
                     Toast.makeText(MainActivity.this, "点击了解忧", Toast.LENGTH_SHORT).show();
+                }else if (index == 3){
+                    Toast.makeText(MainActivity.this, "点击了视频", Toast.LENGTH_SHORT).show();
                 }
             }
 

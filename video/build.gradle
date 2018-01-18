@@ -13,6 +13,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
         //所有组件必须添加名称
         javaCompileOptions {
             annotationProcessorOptions {
@@ -45,7 +49,6 @@ dependencies {
     compile 'com.shuyu:gsyVideoPlayer-java:3.0.0'
     compile 'com.shuyu:gsyVideoPlayer-armv7a:3.0.0'
     compile 'com.shuyu:gsyVideoPlayer-arm64:3.0.0'
-    compile 'com.shuyu:gsyVideoPlayer-x86:3.0.0'
 
     compile project(':engine')
 }

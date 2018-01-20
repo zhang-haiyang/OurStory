@@ -28,6 +28,7 @@ public class VariousDialog {
             @Override
             public void onClick(View view) {
                 dialogOnClick.click();
+                dialog.dismiss();
             }
         });
         view.findViewById(R.id.tv_no).setOnClickListener(new View.OnClickListener() {

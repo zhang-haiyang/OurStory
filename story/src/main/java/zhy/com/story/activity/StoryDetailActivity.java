@@ -2,7 +2,10 @@ package zhy.com.story.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.CollapsibleActionView;
+import android.support.v7.widget.Toolbar;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 
 import zhy.com.story.R;
@@ -13,19 +16,22 @@ import zhy.com.story.R;
 public class StoryDetailActivity extends AppCompatActivity {
 
 
+
     private WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_no_main);
+        setContentView(R.layout.activity_story_detail);
         initView();
     }
 
     private void initView(){
+
         webView = findViewById(R.id.web);
 
-        String catCircleStyle = "<style>body, span, p{font-size: 17px !important;line-height: 28px !important;text-align: left;color: #484848;font-family: 'PingFangSC-Regular', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB',  '宋体', Arial, Verdana, sans-serif;} img {padding: 12px 0; width: 100%; height: auto;}</style>";
-        String con = "<div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872774.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872485.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872343.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872561.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872702.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872719.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872694.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872712.png\"></div><br>萌萌哒张海洋\n";
+//        String catCircleStyle = "<style>body, span, p{font-size: 17px !important;line-height: 28px !important;text-align: left;color: #484848;font-family: 'PingFangSC-Regular', 'Microsoft YaHei', '微软雅黑', 'Hiragino Sans GB',  '宋体', Arial, Verdana, sans-serif;} img {padding: 12px 0; width: 100%; height: auto;}</style>";
+//        String con = "<div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872774.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872485.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872343.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872561.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872702.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872719.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872694.png\"></div><div class=\"art-img-box\"><img src=\"http://file.yirimao.com/1516346872712.png\"></div><br>萌萌哒张海洋\n";
 
         String SSS = "<div data-note-content class=\"show-content\">\n" +
                 "          <p>文图/勒克儿</p><p>说起五大连池，那是与四川阿坝州九寨沟黄龙甘孜州新都桥稻城一样，是摄影爱好者的天堂。这些地方春夏秋美景铺天盖地，寒冬腊月时节，关于四川的美景还偶见，但五大连池像什么样，网上更鲜见。要想与众不同，6点出发，登山去拍五大连池日出，拍黎明时分刚刚苏醒的一座城市，尤其是零下30度的环境，总该绝无仅有了吧？</p><p>这么想，我们一群小伙伴也这么做了。</p><p>早晨8点，迎着太阳，玩一把开水泼出去瞬间结霜成雾的游戏。这样的景观，按照国外摄友的介绍，只有零下40度才有可能，但本文叙述称的零下30度，是墨迹天气当时的显示，准不准，很难说，但是客观依据。</p><div class=\"image-package\">\n" +
@@ -222,8 +228,8 @@ public class StoryDetailActivity extends AppCompatActivity {
                 "      </div>\n";
 
         String content = "<html>\n" +
-                "<head>\n" + catCircleStyle +
-                "</head>\n" +
+//                "<head>\n" + catCircleStyle +
+//                "</head>\n" +
                 "<body>" +SSS + "</body>\n" +
                 "</html>";
         webView.loadData(content, "text/html; charset=UTF-8", null);

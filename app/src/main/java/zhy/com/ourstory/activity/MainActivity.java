@@ -4,8 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import com.blankj.utilcode.util.AppUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NoScrollViewPage mViewPagerVP;
     private MainViewPagerAdapter mAdapter;
 
+    //四个模块碎片
     private StoryFragment mStoryFragment;
     private SpeechFragment mSpeechFragment;
     private DisabuseFragment mDisabuseFragment;
     private VideoFragment mVideoFragment;
 
+    //当前版本号
+    private int mCurrentVersionCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +49,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initView();
-
+        initData();
     }
 
     private void initView(){
         configViewPager();
         initTabBar();//注意与上方代码的先后顺序
+    }
+
+    private void initData(){
+        getCurrentVersionCode();
     }
 
     /**
@@ -127,5 +137,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
         }
     }
+
+    /**
+     * 获取当前版本号
+     */
+    private void getCurrentVersionCode(){
+        mCurrentVersionCode = AppUtils.getAppVersionCode();
+        Log.i("当前版本", mCurrentVersionCode + "");
+
+    }
+
 
 }

@@ -4,11 +4,13 @@ import android.app.Application;
 import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.Utils;
 
 import zhy.com.engine.network.HttpClient;
 import zhy.com.engine.util.EnvUtil;
-import zhy.com.engine.util.LifeCycleUtil;
+import zhy.com.ourstory.util.LifeCycleUtil;
 import zhy.com.ourstory.config.Constant;
+import zhy.com.ourstory.util.LifeCycleUtil;
 
 /**
  * 全局应用
@@ -27,6 +29,8 @@ public class MyApplication extends Application{
         initRouter();//初始化路由
 
         registerLifeCycle();//注册生命周期回调
+
+        Utils.init(this);//初始化工具集
     }
 
     /**

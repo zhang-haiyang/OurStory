@@ -1,4 +1,4 @@
-package zhy.com.story.viewholder;
+package zhy.com.video.viewholder;
 
 import android.content.Context;
 import android.view.ViewGroup;
@@ -8,26 +8,26 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
-import zhy.com.story.R;
-import zhy.com.story.bean.StoryBean;
+import zhy.com.video.R;
+import zhy.com.video.bean.VideoBean;
 
 /**
- * Created by hww on 2018/1/19.
+ * Created by hww on 2018/1/22.
  */
 
-public class StoryListViewHolder extends BaseViewHolder<StoryBean> {
-
+public class VideoListViewHolder extends BaseViewHolder<VideoBean> {
 
     private Context context;
-
     public void setContext(Context context) {
         this.context = context;
     }
 
     private TextView title, summary;
     private ImageView imageView;
-    public StoryListViewHolder(ViewGroup parent) {
-        super(parent, R.layout.fragment_list_story_item);
+
+    public VideoListViewHolder(ViewGroup parent) {
+        super(parent, R.layout.fragment_list_video_item);
+
 
         title = $(R.id.tv_story_title);
         summary = $(R.id.tv_story_summary);
@@ -35,12 +35,11 @@ public class StoryListViewHolder extends BaseViewHolder<StoryBean> {
     }
 
     @Override
-    public void setData(StoryBean storyBean) {
-        title.setText(storyBean.getTitil());
+    public void setData(VideoBean videoBean) {
+        title.setText(videoBean.getVideoTitle());
 
-        summary.setText(storyBean.getSumary());
+        summary.setText(videoBean.getVideoSummary());
 
-        Glide.with(context).load(storyBean.getImageString()).into(imageView);
-
+        Glide.with(context).load(videoBean.getVideoImage()).into(imageView);
     }
 }

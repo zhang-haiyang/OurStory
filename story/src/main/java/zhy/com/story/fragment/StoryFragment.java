@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +51,7 @@ public class StoryFragment extends Fragment{
     }
 
     private void initView(){
-        confingRecyclerView();
+        configRecyclerView();
         testData();
 //        mStoryTV.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -65,8 +66,8 @@ public class StoryFragment extends Fragment{
 //        });
     }
 
-    private void confingRecyclerView(){
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+    private void configRecyclerView(){
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mEasyRecyclerView = mViewV.findViewById(R.id.erv_story);
         mEasyRecyclerView.setLayoutManager(layoutManager);
 
@@ -87,9 +88,18 @@ public class StoryFragment extends Fragment{
 
         for (int i = 0; i < 50; i++){
             StoryBean storyBean = new StoryBean();
-            storyBean.setTitil("第" + (i + 1) + "个故事标题");
-            storyBean.setImageString("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2668130493,1589855626&fm=27&gp=0.jpg");
-            storyBean.setSumary("第" + (i + 1) + "个故事的简介：XXXXXX");
+            if (i == 0){
+                storyBean.setTitil("第" + (i + 1) + "个故事标题个故事标题个故事标题个故事标题(本页面使用瀑布流)");
+            }else {
+                storyBean.setTitil("第" + (i + 1) + "个故事标题");
+            }
+            storyBean.setImageString("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=568496516,791684687&fm=27&gp=0.jpg");
+
+            if (i == 8){
+                storyBean.setSumary("第" + (i + 1) + "个故事的简介：XXXXXX9999999999999999999999(本页面使用瀑布流)");
+            }else {
+                storyBean.setSumary("第" + (i + 1) + "个故事的简介：XXXXXX");
+            }
             sList.add(storyBean);
         }
         mAdapter.addAll(sList);

@@ -101,7 +101,7 @@ public class HttpInterceptor implements Interceptor {
             final String message = bodyObject.getString("message");
 
 
-            // 在网络请求失败的时候，弹出提示
+            // 整个网络请求的入口处。在网络请求失败的时候，弹出提示
             if (status != HttpResponseStatus.SUCCESS) {
                 handler.post(new Runnable() {
                     @Override

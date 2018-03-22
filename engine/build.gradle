@@ -65,5 +65,9 @@ dependencies {
     // 图片／视频／拍照／摄像选择器（需要翻墙）内含glide
     compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.7'
 
+    //视频压缩
+    compile 'com.iceteck.silicompressorr:silicompressor:2.1'
 
+    //集成小米推送
+    compile 'com.tencent.xinge:mipush:3.2.2-release'
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="zhy.com.video">
+    package="test.com.video">
 
     <application
         android:allowBackup="true"
@@ -8,13 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.WqqMainActivity">
+        <activity android:name="test.com.video.activity.WqqMainActivity">
 
         </activity>
 
         <!--视频播放页-->
         <activity
-            android:name="zhy.com.video.activity.OpenVideoActivity"
+            android:name="test.com.video.activity.OpenVideoActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan|stateHidden" />
 

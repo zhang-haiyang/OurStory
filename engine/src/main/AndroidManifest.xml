@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="zhy.com.engine">
+    package="test.com.engine">
 
     <!--网络-->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -26,7 +26,7 @@
                 <!--android:resource="@xml/file_paths" />-->
         <!--</provider>-->
 
-        <activity android:name=".MainActivity">
+        <activity android:name="test.com.engine.MainActivity">
 
         </activity>
     </application>
